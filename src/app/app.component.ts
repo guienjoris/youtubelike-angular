@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import {DbmovieService} from './services/dbmovie.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -8,24 +9,26 @@ import {DbmovieService} from './services/dbmovie.service';
   styleUrls: ['./app.component.scss']
 })
 
+
 export class AppComponent {
   title = ' Mon Youtube-like';
-  @Input() movie : String;
-  onSubmit(event: any ){
-    const movieInput= event.target.movie.value ;
+  onSubmit(form: NgForm){
+    var movieInput=  form.value['movie'];
     console.log(movieInput);
+    this.dbMovie.getMoviesid(movieInput).subscribe((data) =>{
+      console.log(data);
+    });
   }
 
 constructor ( private dbMovie : DbmovieService) {
-  this.dbMovie.getMoviesid().subscribe((data)=> {
-    console.log(data);
-  })
+  console.log('one');
 }
 
 
 ngOnInit() {
     
-    
+  console.log('two');
+
   }
   
 

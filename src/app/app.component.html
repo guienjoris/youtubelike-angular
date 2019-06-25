@@ -6,9 +6,9 @@
 <h1> {{title}}</h1>
 <h2>Recherchez votre film</h2>
 
-<form (ngSubmit)="onSubmit($event)">
-   <input type="text" name="movie" placeholder="Quel film?" value="" (click)="getMoviesid()" id="movieInput">
-   <button >Envoyer</button>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+   <input type="text" name="movie" placeholder="Quel film?" value="" id="movieInput" [(ngModel)]="movie">
+   <button type="submit" >Envoyer</button>
 </form>
 
 
