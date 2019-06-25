@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import {DbmovieService} from './services/dbmovie.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,24 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AppComponent {
-  @Input() movie: String;
-  title = 'youtube-like';
-  onSubmit(event: any) {
-    const movieInput= event.target.movie.value;
-    return console.log( movieInput);
- }
+  title = ' Mon Youtube-like';
+  @Input() movie : String;
+  onSubmit(event: any ){
+    const movieInput= event.target.movie.value ;
+    console.log(movieInput);
+  }
+
+constructor ( private dbMovie : DbmovieService) {
+  this.dbMovie.getMoviesid().subscribe((data)=> {
+    console.log(data);
+  })
+}
+
+
+ngOnInit() {
+    
+    
+  }
+  
+
 }

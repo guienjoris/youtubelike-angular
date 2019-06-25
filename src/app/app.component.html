@@ -3,12 +3,14 @@
 
 
 
-
+<h1> {{title}}</h1>
+<h2>Recherchez votre film</h2>
 
 <form (ngSubmit)="onSubmit($event)">
-   <input name="movie" value="" placeholder="recherchez votre film ici">
-   <button>Envoyer</button>
+   <input type="text" name="movie" placeholder="Quel film?" value="" (click)="getMoviesid()" id="movieInput">
+   <button >Envoyer</button>
 </form>
+
 
 
 <router-outlet></router-outlet>
