@@ -11,6 +11,10 @@ export class DbmovieService {
   
   getMoviesid(movieInput){
     return this.HttpClient.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&language=fr&query=${movieInput}`)
+    
+  }
+  getMovie(id){
+    return this.HttpClient.get(`https://api.themoviedb.org/3/movie/${id}/videos?language=fr&api_key=a13b713c8527c9f9d0ed08581ad261b7`)
   }
   constructor(private HttpClient: HttpClient) {
     
