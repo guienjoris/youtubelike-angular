@@ -5,11 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DomSanitizer , SafeUrl} from '@angular/platform-browser';
-
+import {SafePipe} from './safe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

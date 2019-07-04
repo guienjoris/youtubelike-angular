@@ -8,8 +8,7 @@
 
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
    <input type="text" name="movie" placeholder="Quel film?" value="" id="movieInput" [(ngModel)]="movie">
-   <button type="submit" >Envoyer</button>
 </form>
-<iframe src="{{ urlYoutube}}" title="Video Youtube" frameborder="0" autoplay></iframe>
+<iframe #you [src]="video | safe: 'resourceUrl'" title="Video Youtube" frameborder="0" width="500px" height="300px" [align]="center" autoplay></iframe>
 
 <router-outlet></router-outlet>
